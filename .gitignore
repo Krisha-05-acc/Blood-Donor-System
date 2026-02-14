@@ -1,0 +1,23 @@
+
+# NetBeans
+/nbproject/private/
+/build/
+/dist/
+/nbbuild/
+/nbdist/
+/nbactions.xml
+/nb-configuration.xml
+
+# Compiled files
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# Database credentials (IMPORTANT!)
+DatabaseConnection.java
+
+# OS files
+Thumbs.db
+.DS_Store
