@@ -29,7 +29,7 @@ public class UpdateProfileServlet extends HttpServlet {
         Donor donor = (Donor) session.getAttribute("donor");
         
         if (donor == null) {
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("donorLogin.jsp");
             return;
         }
         
@@ -45,7 +45,7 @@ public class UpdateProfileServlet extends HttpServlet {
         Donor donor = (Donor) session.getAttribute("donor");
         
         if (donor == null) {
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("donorLogin.jsp");
             return;
         }
         
@@ -68,7 +68,7 @@ public class UpdateProfileServlet extends HttpServlet {
             if (updated) {
                 // Update session with new info
                 session.setAttribute("donor", donor);
-                response.sendRedirect("dashboard.jsp?profile_updated=true");
+                response.sendRedirect("donorDashboard.jsp?profile_updated=true");
             } else {
                 response.sendRedirect("updateProfile.jsp?error=update_failed");
             }
