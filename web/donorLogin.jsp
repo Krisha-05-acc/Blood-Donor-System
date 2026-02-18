@@ -275,6 +275,11 @@
             <div class="register-link">
                 Don't have an account? <a href="index.jsp">Register as a donor</a>
             </div>
+            <div class="back-link" style="text-align: center; margin-top: 20px;">
+                <a href="index.jsp" style="color: #6c757d; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s;">
+                <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
         </div>
     </div>
 </body>
