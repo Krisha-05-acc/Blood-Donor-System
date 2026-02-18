@@ -7,16 +7,10 @@ import java.io.IOException;
 
 
 
-/**
- * Servlet for handling donor logout
- */
 @WebServlet("/LogoutServlet")
 public class LogoutServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     
-    /**
-     * Handle POST request for logout
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,12 +31,10 @@ public class LogoutServlet extends HttpServlet {
         }
         
         // Redirect to login page with logout success message
-        response.sendRedirect("login.jsp?logout=success");
+        response.sendRedirect("donorLogin.jsp?logout=success");
     }
     
-    /**
-     * Handle GET request for logout
-     */
+   
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
