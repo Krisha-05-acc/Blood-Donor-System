@@ -4,7 +4,7 @@
     // Check if user is logged in
     Donor donor = (Donor) session.getAttribute("donor");
     if (donor == null) {
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("donorLogin.jsp");
         return;
     }
 %>
@@ -425,7 +425,7 @@
     <div class="container">
         <!-- Header with Back Button -->
         <div class="header">
-            <a href="dashboard.jsp" class="back-btn">
+            <a href="donorDashboard.jsp" class="back-btn">
                 <i class="fas fa-arrow-left"></i> Back to Dashboard
             </a>
         </div>
@@ -606,7 +606,7 @@
 
                     <!-- Form Buttons -->
                     <div class="button-group">
-                        <button type="button" class="btn btn-secondary" onclick="window.location.href='dashboard.jsp'">
+                        <button type="button" class="btn btn-secondary" onclick="window.location.href='donorDashboard.jsp'">
                             <i class="fas fa-times"></i> Cancel
                         </button>
                         <button type="submit" class="btn btn-primary" onclick="return validateForm()">
@@ -703,4 +703,6 @@
         };
     </script>
 </body>
+
 </html>
+
