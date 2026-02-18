@@ -1,6 +1,7 @@
 
 package com.Donor_registration.model;
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 
 public class Donor implements Serializable {
@@ -25,7 +26,7 @@ public class Donor implements Serializable {
     private String address;
     private String city;
     private String emergencyContact;
-    private String registrationDate;
+    private Timestamp registrationDate;
     
     // Default constructor
     public Donor() {
@@ -192,11 +193,11 @@ public class Donor implements Serializable {
         this.emergencyContact = emergencyContact;
     }
     
-    public String getRegistrationDate() {
+    public Timestamp getRegistrationDate() {
         return registrationDate;
     }
     
-    public void setRegistrationDate(String registrationDate) {
+    public void setRegistrationDate(Timestamp registrationDate) {
         this.registrationDate = registrationDate;
     }
     
