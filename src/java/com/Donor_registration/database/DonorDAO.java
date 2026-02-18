@@ -6,12 +6,9 @@ import com.Donor_registration.util.PasswordHasher;
 
 import java.sql.*;
 import java.util.*;;
+import java.sql.Timestamp;
 
 
-/**
- * Data Access Object for Donor operations
- * Handles all database operations related to donors
- */
 public class DonorDAO {
     
     /**
@@ -337,7 +334,7 @@ public class DonorDAO {
         donor.setAddress(rs.getString("address"));
         donor.setCity(rs.getString("city"));
         donor.setEmergencyContact(rs.getString("emergency_contact"));
-        donor.setRegistrationDate(rs.getString("registration_date"));
+        donor.setRegistrationDate(rs.getTimestamp("registration_date"));
         
         return donor;
     }
