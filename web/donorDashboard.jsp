@@ -590,13 +590,19 @@
         <h1><i class="fas fa-hand-holding-heart"></i> Blood Donor Dashboard</h1>
     </div>
     
+    <!-- ATTRACTIVE VIEW DONORS BUTTON -->
     <div class="nav-actions">
-        <!-- ATTRACTIVE VIEW DONORS BUTTON -->
-        <a href="viewDonors.jsp" class="btn-view-donors">
-            <i class="fas fa-users"></i>
-            <span>View Donors</span>
+    <% if(session.getAttribute("admin") != null) { %>
+        <!-- Admin View - Shows all 3 controls -->
+        <a href="adminDashboard.jsp" class="btn-view-donors" style="background: linear-gradient(145deg, #ffd700, #ffa500);">
+            <i class="fas fa-crown"></i>
+            <span>Admin Panel</span>
             <i class="fas fa-arrow-right"></i>
         </a>
+    <% } else if(session.getAttribute("donor") != null) { %>
+        <!-- Donor View - Hide View Donors button -->
+        <!-- Don't show view donors button for regular donors -->
+    <% } %>
         
         <div class="user-menu">
             <div class="user-info">
@@ -792,6 +798,7 @@
                 </div>
                 
                 <div>
+            <div>
                     <div class="info-item">
                         <div class="info-label"><i class="fas fa-notes-medical"></i> Medical Conditions:</div>
                         <div class="info-value">
@@ -871,6 +878,8 @@
         </div>
     </div>
 
+
+
     <!-- Simple JavaScript for extra interactivity -->
     <script>
         // Add current time greeting
@@ -911,3 +920,43 @@
 </body>
 </html>
 
+
+    <!-- Simple JavaScript for extra interactivity -->
+    <script>
+        // Add current time greeting
+        const hour = new Date().getHours();
+        const welcomeCard = document.querySelector('.welcome-card h2');
+        if (welcomeCard) {
+            let greeting = '';
+            if (hour < 12) greeting = 'Good Morning';
+            else if (hour < 18) greeting = 'Good Afternoon';
+            else greeting = 'Good Evening';
+            
+            // You can uncomment this if you want dynamic greeting
+            // welcomeCard.innerHTML = `<i class="fas fa-hand-peace"></i> ${greeting}, <%= donor.getFirstName() %>!`;
+        }
+
+        // Simple animation for stats
+        const statCards = document.querySelectorAll('.stat-card');
+        statCards.forEach((card, index) => {
+            card.style.animation = `fadeInUp 0.5s ${index * 0.1}s both`;
+        });
+
+        // Add fadeInUp animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
