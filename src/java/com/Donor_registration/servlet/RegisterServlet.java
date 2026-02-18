@@ -8,9 +8,7 @@ import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.util.*;
 
-/**
- * Servlet for handling donor registration
- */
+
 @WebServlet("/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -207,7 +205,7 @@ public class RegisterServlet extends HttpServlet {
                 session.setMaxInactiveInterval(30 * 60); // 30 minutes
                 
                 // Redirect to dashboard with success parameter
-                response.sendRedirect("dashboard.jsp?registered=true");
+                response.sendRedirect("donorDashboard.jsp?registered=true");
                 
             } else {
                 // Registration failed
