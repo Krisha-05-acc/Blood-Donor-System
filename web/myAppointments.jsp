@@ -7,7 +7,7 @@
     // Check if user is logged in
     Donor donor = (Donor) session.getAttribute("donor");
     if (donor == null) {
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("donorLogin.jsp");
         return;
     }
     
@@ -550,7 +550,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo">
-            <a href="dashboard.jsp"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+            <a href="donorDashboard.jsp"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
             <h1><i class="fas fa-calendar-check"></i> My Appointments</h1>
         </div>
         <div class="user-menu">
