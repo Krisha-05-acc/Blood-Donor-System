@@ -10,10 +10,6 @@ import java.io.IOException;
 
 
 
-
-/**
- * Servlet for handling donor login
- */
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -47,7 +43,7 @@ public class LoginServlet extends HttpServlet {
                 password == null || password.trim().isEmpty()) {
                 
                 // Missing credentials
-                response.sendRedirect("login.jsp?error=required");
+                response.sendRedirect("donorLogin.jsp?error=required");
                 return;
             }
             
@@ -67,18 +63,18 @@ public class LoginServlet extends HttpServlet {
                 session.setMaxInactiveInterval(30 * 60); // 30 minutes
                 
                 // Redirect to dashboard
-                response.sendRedirect("dashboard.jsp");
+                response.sendRedirect("donorDashboard.jsp");
                 
             } else {
                 // Login failed - invalid credentials
                 System.out.println("Login failed for: " + email);
-                response.sendRedirect("login.jsp?error=invalid");
+                response.sendRedirect("donorLogin.jsp?error=invalid");
             }
             
         } catch (Exception e) {
             System.err.println("Error during login: " + e.getMessage());
             e.printStackTrace();
-            response.sendRedirect("login.jsp?error=server_error");
+            response.sendRedirect("donorLogin.jsp?error=server_error");
         }
     }
     
@@ -94,10 +90,10 @@ public class LoginServlet extends HttpServlet {
         
         if (session != null && session.getAttribute("donor") != null) {
             // User already logged in, redirect to dashboard
-            response.sendRedirect("dashboard.jsp");
+            response.sendRedirect("donorDashboard.jsp");
         } else {
             // Not logged in, show login page
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("donorLogin.jsp");
         }
     }
 }
