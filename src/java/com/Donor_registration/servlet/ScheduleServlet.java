@@ -28,7 +28,7 @@ public class ScheduleServlet extends HttpServlet {
         Donor donor = (Donor) session.getAttribute("donor");
         
         if (donor == null) {
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("donorLogin.jsp");
             return;
         }
         
@@ -43,7 +43,7 @@ public class ScheduleServlet extends HttpServlet {
         Donor donor = (Donor) session.getAttribute("donor");
         
         if (donor == null) {
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("donorLogin.jsp");
             return;
         }
         
@@ -75,7 +75,7 @@ public class ScheduleServlet extends HttpServlet {
             
             if (scheduled) {
                 // Option 1: Go to dashboard (your current)
-                response.sendRedirect("dashboard.jsp?appointment_scheduled=true");
+                response.sendRedirect("donorDashboard.jsp?appointment_scheduled=true");
                 
                 // Option 2: Go to my appointments page (if you want)
                 // response.sendRedirect("myAppointments.jsp?success=scheduled");
